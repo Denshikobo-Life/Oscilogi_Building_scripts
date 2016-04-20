@@ -1,0 +1,67 @@
+﻿2016_0420作業メモ
+
+（１）Downloads Raspbian on Windows
+https://downloads.raspberrypi.org/raspbian_latest
+
+2016-03-18-raspbian-jessie.zip
+
+（２）Write Disk Image
+
+Win32 Disk Imagerで2015-11-21-raspbian-jessie.imgをFドライブ（SDカード）に書き込む
+
+NetEnumでIPアドレスを確認
+192.168.2.114
+
+ttermproでログイン
+$ sudo apt-get update
+
+xrdpをインストール
+
+$ sudo apt-get update
+$ sudo apt-get install xrdp
+
+日本語キーボードの配列を追加。
+$ cd /etc/xrdp/
+$ sudo wget http://w.vmeta.jp/temp/km-0411.ini
+$ sudo ln -s km-0411.ini km-e0010411.ini
+$ sudo ln -s km-0411.ini km-e0200411.ini
+$ sudo ln -s km-0411.ini km-e0210411.ini
+
+サービス起動
+$ sudo service xrdp restart
+
+VNC接続
+Windowsのリモート・デスクトップでRaspiに接続する
+
+Menu->Preferences->Raspberry Pi Configuration
+Expand Filesystem他
+
+SAMBA
+$ sudo apt-get install samba samba-common-bin
+$ sudo smbpasswd -a pi
+
+/etc/samba/smb.confを編集
+
+
+$ cd /opt/samba
+$ wget https://github.com/Denshikobo-Life/bcmlib_for_java/archive/master.zip
+$ unzip master.zip
+$ mv bcmlib_for_java-master bcmlib_for_java
+$ cd bcmlib_for_java
+$ make
+$ make install
+cd ./bcmlib_for_java/example
+chmod 755 *.sh
+
+$ wget https://github.com/Denshikobo-Life/Oscilogi_Console/archive/master.zip
+$ unzip master.zip
+$ mv Oscilogi_Console-master Osci_logi_console
+
+cp Osci_logi_console/dist/Osci_logi_console.jar bcmlib_for_java/examples/
+cp Osci_logi_console/dist/lib/AbsoluteLayout.jar bcmlib_for_java/examples/lib
+
+sudo cp bcmlib_for_java/examples/libbcm_interface.so /usr/local/lib
+sudo cp bcmlib_for_java/examples/libbcm_interface.so /usr/local/lib/libbcm_interface2.so
+
+sudo apt-get install ttf-kochi-gothic xfonts-intl-japanese xfonts-intl-japanese-big xfonts-kaname
+
