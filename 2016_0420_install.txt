@@ -53,9 +53,10 @@ $ make install
 cd ./bcmlib_for_java/example
 chmod 755 *.sh
 
-$ wget https://github.com/Denshikobo-Life/Oscilogi_Console/archive/master.zip
+
+$ wget https://github.com/Denshikobo-Life/Oscilogi_Building_scripts/archive/master.zip
 $ unzip master.zip
-$ mv Oscilogi_Console-master Osci_logi_console
+$ mv Oscilogi_Building_scripts-master Osci_logi_console
 
 cp Osci_logi_console/dist/Osci_logi_console.jar bcmlib_for_java/examples/
 cp Osci_logi_console/dist/lib/AbsoluteLayout.jar bcmlib_for_java/examples/lib
