@@ -22,7 +22,7 @@ $ sudo ln -s km-0411.ini km-e0210411.ini
 $ sudo apt-get install ttf-kochi-gothic xfonts-intl-japanese xfonts-intl-japanese-big xfonts-kaname
 $ sudo service xrdp restart
 
-(5)Connet Raspi with Windows Remote Desktop
+(5)Connect Raspi with Windows Remote Desktop
 Menu->Preferences->Raspberry Pi Configuration
 Expand Filesystem etc.
 

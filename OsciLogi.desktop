@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=OsciLogi
+Name[en_GB]=OsciLogi
+Icon=/opt/samba/OsciLogi.png
+Exec=/home/pi/Start_OsciLogi410.sh
+Comment[en_GB]=Start OsciLogi410
+Terminal=true
+StartupNotify=true
