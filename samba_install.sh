@@ -7,5 +7,8 @@ sudo chown pi:pi /opt/samba
 chmod 777 /opt/samba
 sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.org
 sudo cp ./smb.conf.replace /etc/samba/smb.conf
+sudo systemctl disable samba
+sudo systemctl enable nmbd
+sudo systemctl enable smbd
 sudo service nmbd restart
 sudo service smbd restart
