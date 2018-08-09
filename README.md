@@ -2,15 +2,17 @@
 Scripts which build Oscilogi_Console on Raspi 
 
 $ cd ~/
-
-$ git clone git://github.com/Denshikobo-Life/Oscilogi_Building_scripts
-
-$ cd Oscilogi_Building_scripts
-
-$ cat install_memo.txt
-
+$ wget https://github.com/Denshikobo-Life/Oscilogi_Building_scripts/archive/master.zip
+$ unzip master.zip
+$ cd Oscilogi_Building_scripts-master
 $ chmod 755 *.sh
-
-$ sudo apt-get update
-
-And, Please use proper scripts which you need.
+$ ./xrdp_install.sh
+$ ./samba_install.sh
+$ ./bcmlib_install.sh
+$ ./oscilogi_install.sh
+$ ./setup_icon.sh
+$ sudo dphys-swapfile swapoff
+$ sudo insserv -r dphys-swapfile
+$ sudo nano /etc/fstab
+  and append @last line
+tmpfs	/tmp	tmpfs	defaults,noatime,size=32m	0	0
