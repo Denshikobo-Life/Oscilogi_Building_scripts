@@ -1,6 +1,7 @@
 #!/bin/bash
 #<Install xrdp>
 sudo apt-get update
+sudo apt-get install tightvncserver
 sudo apt-get install xrdp
 cd /etc/xrdp/
 sudo wget http://w.vmeta.jp/temp/km-0411.ini
